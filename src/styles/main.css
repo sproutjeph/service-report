@@ -1,0 +1,28 @@
+html,
+body {
+  background-color: black;
+  color: white;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+th,
+td {
+  border: 1px solid white;
+  padding: 10px;
+}
+td {
+  text-align: left;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
