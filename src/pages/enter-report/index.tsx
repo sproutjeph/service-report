@@ -33,22 +33,22 @@ const EnterReport = () => {
   const monthData = [
     {
       id: 1,
-      month: "January",
+      month: "Jan",
       year,
     },
     {
       id: 2,
-      month: "Febuary",
+      month: "Feb",
       year,
     },
     {
       id: 3,
-      month: "March",
+      month: "Mar",
       year,
     },
     {
       id: 4,
-      month: "April",
+      month: "Apr",
       year,
     },
     {
@@ -68,27 +68,27 @@ const EnterReport = () => {
     },
     {
       id: 8,
-      month: "August",
+      month: "Aug",
       year,
     },
     {
       id: 9,
-      month: "September",
+      month: "Sept",
       year,
     },
     {
       id: 10,
-      month: "October",
+      month: "Oct",
       year,
     },
     {
       id: 11,
-      month: "November",
+      month: "Nov",
       year,
     },
     {
       id: 12,
-      month: "December",
+      month: "Dec",
       year,
     },
   ];
@@ -112,9 +112,8 @@ const EnterReport = () => {
       return;
     }
     createReport(newReport);
-    router.push("/my-reports");
 
-    console.log(newReport);
+    router.push("/my-reports");
   }
   return (
     <form

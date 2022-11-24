@@ -33,12 +33,12 @@ const Navbar = () => {
     <>
       <Disclosure
         as="nav"
-        className="bg-[#1B1B1B] h-20 backdrop-blur fixed top-0 w-full"
+        className="bg-[#1B1B1B] h-14 backdrop-blur fixed top-0 w-full"
       >
         {({ open }) => (
           <>
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-6">
-              <div className="flex h-20 items-center justify-between">
+              <div className="flex h-14 items-center justify-between">
                 <div className="flex items-center">
                   <Link href="/" className="flex-shrink-0 cursor-pointer flex">
                     <Image
@@ -46,7 +46,7 @@ const Navbar = () => {
                       height={32}
                       className="h-8 w-8"
                       src={logoUrl}
-                      alt="Mystove"
+                      alt="Jeph"
                     />
                   </Link>
                   <div className="hidden md:block">
@@ -55,7 +55,7 @@ const Navbar = () => {
                         <Link
                           key={item.name}
                           href={item.path}
-                          className={`block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-primary-color`}
+                          className={`block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-black`}
                         >
                           {item.name}
                         </Link>
