@@ -49,7 +49,7 @@ const Report = ({ report }: IProps) => {
             <td>{report.returnVists}</td>
           </tr>
           <tr>
-            <td>No of Diff... Bible Studies Conducted</td>
+            <td>Bible Studies Conducted</td>
             <td>{report.bibleStudies}</td>
           </tr>
         </tbody>
@@ -66,7 +66,7 @@ const Report = ({ report }: IProps) => {
       </table>
       <br />
       <table>
-        <tbody className="flex px-4 gap-10">
+        <tbody className="flex px-4 gap-20">
           <tr>
             <td className="border-none">
               <button className="bg-violet-900 py-2 px-10 rounded-md">
@@ -74,10 +74,10 @@ const Report = ({ report }: IProps) => {
               </button>
             </td>
           </tr>
-          <tr>
+          <tr className="">
             <td className="border-none">
               <button className=" bg-violet-900 py-2 px-10 rounded-md">
-                Save as PDF
+                Save
               </button>
             </td>
           </tr>

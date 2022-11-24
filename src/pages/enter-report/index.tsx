@@ -117,7 +117,7 @@ const EnterReport = () => {
   }
   return (
     <form
-      className="max-w-xl mx-auto bg-[#1B1B1B] p-4 rounded-md mt-20"
+      className="max-w-xl mx-auto bg-[#1B1B1B] p-4 rounded-md my-20"
       onSubmit={(e) => onSubmit(e)}
     >
       <div className="text-black grid grid-cols-2 gap-y-6 gap-x-3">
