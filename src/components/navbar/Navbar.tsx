@@ -49,6 +49,7 @@ const Navbar = () => {
                       alt="Jeph"
                     />
                   </Link>
+                  <h6 className=" md:hidden">Jeph</h6>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item) => (

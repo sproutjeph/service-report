@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { IReport } from "../../utils/types";
 import { useGlobalContext } from "../../store/context";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 const EnterReport = () => {
   const router = useRouter();
   const { createReport, editData, isEditing, updateReport, editId } =
@@ -126,9 +127,14 @@ const EnterReport = () => {
       className="max-w-xl mx-auto bg-[#1B1B1B] p-4 rounded-md my-20"
       onSubmit={(e) => onSubmit(e)}
     >
+      <ArrowLeftIcon
+        title="Back"
+        onClick={() => router.push("/")}
+        className="h-6 w-6 text-white text-end cursor-pointer"
+      />
       <div className="text-black grid grid-cols-2 gap-y-6 gap-x-3">
         <div className="col-span-2 ">
-          <label htmlFor="" className="text-white block">
+          <label htmlFor="" className="text-white block text-center">
             Name
           </label>
           <input
