@@ -60,6 +60,30 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
       type: ActionKinds.UPDATE_REPORT,
       payload: { id: id, updateData: updateData },
     });
+
+    updateLocalStorage(id, updateData);
+  }
+
+  function updateLocalStorage(id: string, updateData: IReport) {
+    if (typeof window !== "undefined") {
+      const reportsInLStorage = window.localStorage.getItem("reports");
+
+      if (reportsInLStorage) {
+        const itemsInLStorage = JSON.parse(reportsInLStorage);
+        const updatedReport = itemsInLStorage.map((report: IReport) => {
+          if (report.id === id) {
+            return {
+              ...updateData,
+            };
+          }
+        });
+        const notUpdatedReports = state.allReports.filter(
+          (report) => report.id !== id
+        );
+
+        addToLocalStorage("reports", [...notUpdatedReports, ...updatedReport]);
+      }
+    }
   }
 
   function notEditing() {

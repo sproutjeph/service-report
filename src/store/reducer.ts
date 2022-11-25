@@ -51,7 +51,6 @@ const reducer = (state: IState, action: IActions) => {
     const notUpdatedReports = state.allReports.filter(
       (report) => report.id !== action.payload.id
     );
-    console.log(updatedReports);
     return {
       ...state,
       allReports: [...notUpdatedReports, ...updatedReports],
