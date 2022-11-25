@@ -5,18 +5,19 @@ import React, { useState } from "react";
 import { IReport } from "../../utils/types";
 import { useGlobalContext } from "../../store/context";
 const EnterReport = () => {
-  const { createReport } = useGlobalContext();
-  const [reportValues, setReportValues] = useState({
-    name: "",
-    month: "",
-    placements: "",
-    video: "",
-    hours: "",
-    returnVists: "",
-    bibleStudies: "",
-    comments: "",
-  });
   const router = useRouter();
+  const { createReport, editData, isEditing, updateReport, editId } =
+    useGlobalContext();
+  const [reportValues, setReportValues] = useState({
+    name: isEditing ? editData.name : "",
+    month: isEditing ? editData.month : "",
+    placements: isEditing ? editData.placements : "",
+    video: isEditing ? editData.video : "",
+    hours: isEditing ? editData.hours : "",
+    returnVists: isEditing ? editData.returnVists : "",
+    bibleStudies: isEditing ? editData.bibleStudies : "",
+    comments: isEditing ? editData.comments : "",
+  });
 
   function onChangeHandler(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -107,7 +108,12 @@ const EnterReport = () => {
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (reportValues.name.trim().length === 0) {
+    if (isEditing) {
+      updateReport(editId, { ...newReport, id: editId });
+      router.push("/my-reports");
+      return;
+    }
+    if (reportValues.name.trim().length === 0 && !isEditing) {
       toast("plaese enter your Name");
       return;
     }
@@ -226,7 +232,7 @@ const EnterReport = () => {
             type="submit"
             className="block mt-[26px] py-2 text-white bg-violet-900  rounded-lg   w-full"
           >
-            Save
+            {isEditing ? "Edit" : "Save"}
           </button>
         </div>
       </div>
