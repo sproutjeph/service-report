@@ -37,21 +37,21 @@ const Navbar = () => {
       >
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-6">
-              <div className="flex h-14 items-center justify-between">
+            <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-6">
+              <div className="flex items-center justify-between h-14">
                 <div className="flex items-center">
-                  <Link href="/" className="flex-shrink-0 cursor-pointer flex">
+                  <Link href="/" className="flex flex-shrink-0 cursor-pointer">
                     <Image
                       width={32}
                       height={32}
-                      className="h-8 w-8"
+                      className="w-8 h-8"
                       src={logoUrl}
                       alt="Jeph"
                     />
                   </Link>
-                  <h6 className=" md:hidden ml-28">Ministry Assistant</h6>
+                  <h6 className="ml-16 md:hidden">Ministry Assistant</h6>
                   <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
+                    <div className="flex items-baseline ml-10 space-x-4">
                       {navigation.map((item) => (
                         <Link
                           key={item.name}
@@ -65,16 +65,16 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-center md:ml-6">
+                  <div className="flex items-center ml-4 md:ml-6">
                     {/* Profile dropdown */}
                     <Menu as="div" className="relative ml-3 ">
                       <div>
-                        <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <Menu.Button className="flex items-center max-w-xs text-lg bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="sr-only">Open user menu</span>
                           <Image
                             width={32}
                             height={32}
-                            className="h-8 w-8 rounded-full"
+                            className="w-8 h-8 rounded-full"
                             src={user.imageUrl}
                             alt=""
                           />
@@ -89,7 +89,7 @@ const Navbar = () => {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Items className="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           {userNavigation.map((item) => (
                             <Menu.Item key={item.name}>
                               {({ active }) => (
@@ -114,14 +114,14 @@ const Navbar = () => {
                     </Menu>
                   </div>
                 </div>
-                <div className=" flex md:hidden ">
+                <div className="flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-slate-900 hover:bg-gray-200">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 bg-white rounded-md text-slate-900 hover:bg-gray-200">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                      <XMarkIcon className="block w-6 h-6" aria-hidden="true" />
                     ) : (
-                      <Bars4Icon className="block h-6 w-6" aria-hidden="true" />
+                      <Bars4Icon className="block w-6 h-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
                 </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
             </div>
 
             <Disclosure.Panel className="md:hidden bg-[#1B1B1B] ">
-              <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 {navigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
@@ -144,13 +144,13 @@ const Navbar = () => {
                   </Disclosure.Button>
                 ))}
               </div>
-              <div className="border-t border-white pt-4 pb-3">
+              <div className="pt-4 pb-3 border-t border-white">
                 <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
                     <Image
                       width={32}
                       height={32}
-                      className="h-14 w-14 rounded-full"
+                      className="rounded-full h-14 w-14"
                       src={user.imageUrl}
                       alt=""
                     />
@@ -159,12 +159,12 @@ const Navbar = () => {
                     <div className="text-base font-medium leading-none text-white">
                       {user.name}
                     </div>
-                    <div className="text-sm font-medium leading-none text-gray-100 mt-1">
+                    <div className="mt-1 text-sm font-medium leading-none text-gray-100">
                       {user.email}
                     </div>
                   </div>
                 </div>
-                <div className="mt-3 space-y-1 px-2">
+                <div className="px-2 mt-3 space-y-1">
                   {userNavigation.map((item) => (
                     <Disclosure.Button
                       key={item.name}
@@ -174,7 +174,7 @@ const Navbar = () => {
                           // navigateTo("/profile");
                         }
                       }}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white hover:text-black"
+                      className="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-white hover:text-black"
                     >
                       {item.name}
                     </Disclosure.Button>
