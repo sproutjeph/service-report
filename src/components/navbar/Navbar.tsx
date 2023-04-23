@@ -17,6 +17,7 @@ const Navbar = () => {
     { name: "My Reports", path: "/my-reports" },
     { name: "Bible Students", path: "/bible-students" },
     { name: "Download App", path: "/download-app" },
+    { name: "Privacy Policy", path: "/privacy" },
   ];
 
   function classNames(...classes: any) {
